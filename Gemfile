@@ -11,7 +11,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "responders"
+gem 'responders'
+gem 'puma'
 
 group :development, :test do
   gem 'factory_girl_rails'
