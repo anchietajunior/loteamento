@@ -15,8 +15,10 @@ gem 'responders'
 gem 'puma'
 
 group :development, :test do
-  gem 'factory_girl_rails'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
