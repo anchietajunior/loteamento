@@ -1,49 +1,22 @@
-require 'test_helper'
+require "rails_helper"
 
-class CustomersControllerTest < ActionController::TestCase
-  setup do
-    @customer = customers(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:customers)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create customer" do
-    assert_difference('Customer.count') do
-      post :create, customer: { cpf: @customer.cpf, email: @customer.email, first_tel: @customer.first_tel, gender: @customer.gender, maried: @customer.maried, marital_state: @customer.marital_state, name: @customer.name, second_tel: @customer.second_tel }
+RSpec.describe CustomersController, :type => :controller do
+  describe "GET #index" do
+    it "responds successfully with an HTTP 200 status code" do
+      get :index
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
     end
 
-    assert_redirected_to customer_path(assigns(:customer))
-  end
-
-  test "should show customer" do
-    get :show, id: @customer
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @customer
-    assert_response :success
-  end
-
-  test "should update customer" do
-    patch :update, id: @customer, customer: { cpf: @customer.cpf, email: @customer.email, first_tel: @customer.first_tel, gender: @customer.gender, maried: @customer.maried, marital_state: @customer.marital_state, name: @customer.name, second_tel: @customer.second_tel }
-    assert_redirected_to customer_path(assigns(:customer))
-  end
-
-  test "should destroy customer" do
-    assert_difference('Customer.count', -1) do
-      delete :destroy, id: @customer
+    it "renders the index template" do
+      get :index
+      expect(response).to render_template("index")
     end
 
-    assert_redirected_to customers_path
+    it "loads all of the posts into @customers" do
+      customer1, customer2 = Customer.create!, Customer.create!
+      get :index
+      expect(assigns(:customers)).to match_array([customer1, customer2])
+    end
   end
 end

@@ -8,7 +8,26 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="wrapper" class="toggled">
+
+  <%= render 'layouts/navigation' %>
+  <%= render 'layouts/page' %>
+
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+
+            $("#wrapper").toggleClass("toggled");
+
+            $('#wrapper.toggled').find("#sidebar-wrapper").find(".collapse").collapse('hide');
+
+        });
+    });
+</script>
 
 </body>
 </html>
