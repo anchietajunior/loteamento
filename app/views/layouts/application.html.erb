@@ -2,32 +2,25 @@
 <html>
 <head>
   <title>Loteamento</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body>
 
 <div class="wrapper" class="toggled">
 
   <%= render 'layouts/navigation' %>
-  <%= render 'layouts/page' %>
+
+  <div id="page-wrapper">
+
+    <%= yield %>
+
+  </div>
 
 </div>
 
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-
-            $("#wrapper").toggleClass("toggled");
-
-            $('#wrapper.toggled').find("#sidebar-wrapper").find(".collapse").collapse('hide');
-
-        });
-    });
-</script>
 
 </body>
 </html>

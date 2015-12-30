@@ -1,0 +1,42 @@
+pt-BR:
+  customers:
+    title: &title Clientes
+    fields: &fields
+      name: Nome
+      cpf: CPF
+      first_tel: Telefone (1)
+      second_tel: Telefone (2)
+      email: Email
+      marital_state: Estado Civil
+      gender: Sexo
+      created_at: Criado em
+      updated_at: Atualizado em
+    index:
+      title: *title
+      <<: *fields
+    new:
+      title: Novo Cliente
+      <<: *fields
+    show:
+      title: Cliente
+      <<: *fields
+    edit:
+      title: Editar Cliente
+      <<: *fields
+
+  simple_form:
+    labels:
+      customer:
+        <<: *fields
+
+  activerecord:
+    models:
+      customer: *title
+    attributes:
+        customer:
+          <<: *fields
+    errors:
+      models:
+        customer:
+          attributes:
+            <<: *fields

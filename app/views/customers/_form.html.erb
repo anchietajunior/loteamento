@@ -11,39 +11,57 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
+</div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :cpf %><br>
+        <%= f.text_field :cpf, :class => "form-control cpf" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :first_tel %><br>
+        <%= f.text_field :first_tel, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :marital_state %><br>
+        <%= f.text_field :marital_state, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :second_tel %><br>
+        <%= f.text_field :second_tel, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :gender %><br>
+        <%= f.text_field :gender, :class => "form-control" %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :first_tel %><br>
-    <%= f.text_field :first_tel %>
-  </div>
-  <div class="field">
-    <%= f.label :second_tel %><br>
-    <%= f.text_field :second_tel %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :marital_state %><br>
-    <%= f.text_field :marital_state %>
-  </div>
-  <div class="field">
-    <%= f.label :maried %><br>
-    <%= f.check_box :maried %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+
+  <div class="form-group">
+    <%= f.submit :class => "btn btn-default" %>
+    <%= link_to 'Clientes', customers_path, :class => "btn btn-default" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+jQuery(function($){
+   $(".date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+   $(".phone").mask("0(99)9999-9999");
+   $(".cpf").mask("999.999.999-99");
+});
+</script>
