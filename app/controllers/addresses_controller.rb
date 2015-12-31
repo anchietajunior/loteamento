@@ -3,10 +3,6 @@ class AddressesController < ApplicationController
 
   respond_to :html, :js, :json
 
-  def index
-    @addresses = Address.all
-    respond_with(@addresses)
-  end
 
   def show
     respond_with(@address)

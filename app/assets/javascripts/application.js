@@ -13,6 +13,7 @@
 //= require jquery2
 //= require jquery_ujs
 //= require jquery.maskedinput
+//= require app
 //= require bootstrap-sprockets
 //= require metisMenu.min
 //= require sb-admin-2

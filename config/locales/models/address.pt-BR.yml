@@ -1,0 +1,39 @@
+pt-BR:
+  addresses:
+    title: &title Endereço
+    fields: &fields
+      place: Logradouro
+      number: Número
+      cep: Cep
+      complement: Complemento
+      created_at: Criado em
+      updated_at: Atualizado em
+    index:
+      title: *title
+      <<: *fields
+    new:
+      title: Novo Cliente
+      <<: *fields
+    show:
+      title: Cliente
+      <<: *fields
+    edit:
+      title: Editar Cliente
+      <<: *fields
+
+  simple_form:
+    labels:
+      address:
+        <<: *fields
+
+  activerecord:
+    models:
+      address: *title
+    attributes:
+        address:
+          <<: *fields
+    errors:
+      models:
+        address:
+          attributes:
+            <<: *fields
