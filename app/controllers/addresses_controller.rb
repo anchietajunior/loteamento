@@ -3,10 +3,6 @@ class AddressesController < ApplicationController
 
   respond_to :html, :js, :json
 
-  def index
-    @addresses = Address.all
-    respond_with(@addresses)
-  end
 
   def show
     respond_with(@address)
@@ -42,6 +38,6 @@ class AddressesController < ApplicationController
     end
 
     def address_params
-      params.require(:address).permit(:place, :number, :complement, :cep, :customer_id)
+      params.require(:address).permit(:place, :number, :complement, :cep, :city, :state, :customer_id)
     end
 end

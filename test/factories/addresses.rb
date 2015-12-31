@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :address do
-    place "MyString"
-number "MyString"
-complement "MyString"
-cep "MyString"
-customer nil
+    place "Avenida Delmiro gouveia"
+    number "1078"
+    complement "Casa"
+    cep "48609-238"
+    customer nil
   end
 
 end

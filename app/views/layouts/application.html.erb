@@ -2,13 +2,25 @@
 <html>
 <head>
   <title>Loteamento</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body>
 
-<%= yield %>
+<div class="wrapper" class="toggled">
+
+  <%= render 'layouts/navigation' %>
+
+  <div id="page-wrapper">
+
+    <%= yield %>
+
+  </div>
+
+</div>
+
+
 
 </body>
 </html>

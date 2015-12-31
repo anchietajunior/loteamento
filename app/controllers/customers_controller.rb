@@ -14,6 +14,7 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
+    @customer.build_address
     respond_with(@customer)
   end
 
@@ -40,8 +41,8 @@ class CustomersController < ApplicationController
     def set_customer
       @customer = Customer.find(params[:id])
     end
-    
+
     def customer_params
-      params.require(:customer).permit(:name, :cpf, :first_tel, :second_tel, :email, :marital_state, :maried, :gender)
+      params.require(:customer).permit(:name, :cpf, :first_tel, :second_tel, :email, :marital_state, :maried, :gender, :address_attributes => [:place, :number, :complement, :cep, :city, :state])
     end
 end
