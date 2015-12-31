@@ -5,6 +5,8 @@ pt-BR:
       place: Logradouro
       number: Número
       cep: Cep
+      city: Cidade
+      state: UF
       complement: Complemento
       created_at: Criado em
       updated_at: Atualizado em

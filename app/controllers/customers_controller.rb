@@ -43,6 +43,6 @@ class CustomersController < ApplicationController
     end
 
     def customer_params
-      params.require(:customer).permit(:name, :cpf, :first_tel, :second_tel, :email, :marital_state, :maried, :gender, :address_attributes => [:place, :number, :complement, :cep])
+      params.require(:customer).permit(:name, :cpf, :first_tel, :second_tel, :email, :marital_state, :maried, :gender, :address_attributes => [:place, :number, :complement, :cep, :city, :state])
     end
 end
